@@ -1,5 +1,6 @@
 import pandas as pd
 import re
+from preprocessor import preprocess_can_data
 
 log_data = []
 
@@ -26,8 +27,12 @@ with open('normal_run_data.txt', 'r') as file:
             row = [timestamp, can_id, dlc] + payload_bytes[:8] + [0]
             log_data.append(row)
 
-# Convert the parsed list into a DataFrame matching the CSV structure
+# Convert the parsed list into a pandas DataFrame
 columns = ['Timestamp', 'CAN_ID', 'DLC', 'DATA_0', 'DATA_1', 'DATA_2', 
            'DATA_3', 'DATA_4', 'DATA_5', 'DATA_6', 'DATA_7', 'Label']
 
 df_normal = pd.DataFrame(log_data, columns=columns)
+df_normal_processed = preprocess_can_data(df_normal)
+
+columns = ['Timestamp', 'CAN_ID', 'DLC', 'DATA_0', 'DATA_1', 'DATA_2', 'DATA_3', 'DATA_4', 'DATA_5', 'DATA_6', 'DATA_7', 'Label']
+df_attack = pd.read_csv('DoS_dataset.csv', names=columns)
