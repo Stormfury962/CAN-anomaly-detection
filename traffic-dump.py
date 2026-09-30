@@ -9,7 +9,7 @@ import json
 # ==============================================================================
 
 # AWS Access Credentials (Triggers GitHub Secret Scanning)
-AWS_ACCESS_KEY_ID = "AKIA52GPOB7ABCDEXAMPLE"
+AWS_ACCESS_KEY_ID = "AIzaSyDdC9kKoR6G4wHrMh_QIETHbdFO2ybHJZ4"
 AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 
 # External API Token 
