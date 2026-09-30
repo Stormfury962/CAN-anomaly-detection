@@ -1,0 +1,10 @@
+# Data processing
+pandas==2.1.1
+numpy==1.26.0
+
+# Cloud infrastructure
+boto3==1.28.62
+
+# Intentionally outdated packages for security demo
+requests==2.19.1
+urllib3==1.25.7
